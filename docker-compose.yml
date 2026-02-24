@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: whiteboard-mysql
+    environment:
+      MYSQL_DATABASE: whiteboard_db
+      MYSQL_ROOT_PASSWORD: your_mysql_password
+    ports:
+      - "3307:3306"
+
+  backend:
+    build: ./backend
+    container_name: whiteboard-backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/whiteboard_db?useSSL=false
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: your_mysql_password
