@@ -160,7 +160,7 @@ Backend → [http://localhost:8080](http://localhost:8080)
 ## 👩‍💻 Authors
 
 **Sowmya Indurthi**
-**Gopichand Darla**
+
 M.Tech CSE — VIT-AP University
 
 ---
